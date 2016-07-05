@@ -1,16 +1,18 @@
 $(document).ready(function(){
         $("#searchB").click(link);
+    
+        $('form input').keydown(function(event){
+            if(event.keyCode == 13) {
+                event.preventDefault();
+                link();
+                return false;
+            }
+        });
 });
 
 
 
-$('form input').keydown(function(event){
-    if(event.keyCode == 13) {
-        event.preventDefault();
-        link();
-        return false;
-    }
-});
+
  
 
 function link(){
