@@ -3,12 +3,6 @@ extends ../node_modules/jade-bootstrap/_bootstrap
 block script  
     script(src='/javascripts/jquery-3.0.0.min.js')
     script(src='/javascripts/subredditSearch.js')
-    
-    
-
-
-block body
-
     script.
         $(document).ready(function(){
                 $("#searchB").click(link);
@@ -32,6 +26,13 @@ block body
             link = link + sub + "+" + query;
             window.location = link;
         }
+    
+    
+
+
+block body
+
+    
     .container
         .col-md-8.col-md-offset-2(align='center')
             link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Sans+Pro", type='text/css')
