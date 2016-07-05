@@ -1,0 +1,37 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+
+block script
+    
+    script(src='/javascripts/jquery-3.0.0.min.js')
+    script(src='/javascripts/subredditSearch.js')
+
+block body
+    .container
+        .col-md-8.col-md-offset-2(align='center')
+            link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Sans+Pro", type='text/css')
+            style
+                |h1 {margin: 20px; font-family: 'Source Sans Pro', sans-serif;}
+                |.form-inline .form-control {width: 100%;}
+                |.btn-primary{width: 100%}
+            h1= title
+            .row.container-fluid
+                if subreddit
+                    .form-inline
+                        .form-group.col-sm-3
+                            form
+                                input.form-control(id="subredditF", type='text', placeholder='Subreddit', value=subreddit)
+                        .form-group.col-sm-7
+                            form
+                                input.form-control(id="queryF", type='text', placeholder='Content', autofocus='')
+                        .form-group.col-sm-2
+                            a.btn.btn-primary(id='searchB', type="button") Search
+                else
+                    .form-inline
+                        .form-group.col-sm-3
+                            form
+                                input.form-control(id="subredditF", type='text', placeholder='Subreddit', autofocus='')
+                        .form-group.col-sm-7
+                            form
+                                input.form-control(id="queryF", type='text', placeholder='Content')
+                        .form-group.col-sm-2
+                            a.btn.btn-primary(id='searchB', type="button") Search
