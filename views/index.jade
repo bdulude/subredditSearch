@@ -1,6 +1,12 @@
 extends ../node_modules/jade-bootstrap/_bootstrap
 
-block script  
+
+
+
+
+
+
+block append script  
     script(src='/javascripts/jquery-3.0.0.min.js')
     script(src='/javascripts/subredditSearch.js')
     script.
@@ -30,9 +36,7 @@ block script
     
 
 
-block body
-
-    
+block append body
     .container
         .col-md-8.col-md-offset-2(align='center')
             link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Sans+Pro", type='text/css')
