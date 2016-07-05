@@ -6,38 +6,13 @@ extends ../node_modules/jade-bootstrap/_bootstrap
 
 
 
-block append script  
-    script(src='/javascripts/jquery-3.0.0.min.js')
-    script(src='/javascripts/subredditSearch.js')
-    script.
-        $(document).ready(function(){
-                $("#searchB").click(link);
-        });
 
-
-
-        $('form input').keydown(function(event){
-            if(event.keyCode == 13) {
-                event.preventDefault();
-                link();
-                return false;
-            }
-        });
-        function link(){
-            var link = "http://www.google.com/search?q=site:reddit.com/r/";
-            var sub = $("#subredditF").val();
-            var query = $("#queryF").val();
-            query = query.replace('+','%2B');
-            query = query.replace(' ','+');
-            link = link + sub + "+" + query;
-            window.location = link;
-        }
-    
-    
 
 
 block append body
     .container
+        script(src='/javascripts/jquery-3.0.0.min.js')
+        script(src='/javascripts/subredditSearch.js')
         .col-md-8.col-md-offset-2(align='center')
             link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Sans+Pro", type='text/css')
             style
@@ -66,3 +41,7 @@ block append body
                                 input.form-control(id="queryF", type='text', placeholder='Content')
                         .form-group.col-sm-2
                             a.btn.btn-primary(id='searchB', type="button") Search
+//
+//block append script  
+//    script(src='/javascripts/jquery-3.0.0.min.js')
+//    script(src='/javascripts/subredditSearch.js')
